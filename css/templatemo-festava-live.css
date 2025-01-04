@@ -13,10 +13,10 @@ https://templatemo.com/tm-583-festava-live
 :root {
   --white-color:                  white;
   --primary-color:                #F8CB2E;
-  --secondary-color:              #EE5007;
+  --secondary-color:              #F8CB2E;
   --section-bg-color:             #f0f8ff;
   --custom-btn-bg-color:          gold;
-  --custom-btn-bg-hover-color:    #c01f27;
+  --custom-btn-bg-hover-color:    #D4AF37;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #7fffd4;
@@ -46,7 +46,9 @@ https://templatemo.com/tm-583-festava-live
 body {
   background-color: var(--white-color);
   font-family: var(--body-font-family); 
-}
+  background: linear-gradient(135deg, #000000, #FFD700); /* Black to gold gradient */
+
+} 
 
 
 /*---------------------------------------
@@ -506,7 +508,7 @@ strong {
   ABOUT              
 -----------------------------------------*/
 .about-section {
-  background-image: url('../images/edward-unsplash-blur.jpg');
+  background-image: url(https://t4.ftcdn.net/jpg/03/15/39/41/360_F_315394192_WPTehkhMfKD6TZaaQMNMtuMx6xZtIM9e.jpg);
   background-color: #704010;
   background-repeat: no-repeat;
   background-size: cover;
@@ -828,12 +830,12 @@ strong {
 }
 
 .site-footer-top {
-  background-color: var(--secondary-color);
+  background-color: var(--dark-color);
   background-image: url('../images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg');
   background-repeat: no-repeat;
   margin-bottom: 70px;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 .site-footer-bottom {

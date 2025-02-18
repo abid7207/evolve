@@ -507,12 +507,16 @@ strong {
 /*---------------------------------------
   ABOUT              
 -----------------------------------------*/
+
+ /*---------------------------------------
+  ABOUT              
+-----------------------------------------*/
 .about-section {
-  background-image: url(https://t4.ftcdn.net/jpg/03/15/39/41/360_F_315394192_WPTehkhMfKD6TZaaQMNMtuMx6xZtIM9e.jpg);
-  background-color: #704010;
+  background: linear-gradient(150deg, #000000, #ffffff);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
 }
 
 .about-image {
@@ -546,6 +550,11 @@ strong {
   left: 0;
   margin: 20px;
   padding: 35px;
+}
+.images{
+  display: flex;
+  margin-top: 2%;
+  justify-content: space-between;
 }
 
 

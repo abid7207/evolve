@@ -46,7 +46,7 @@ https://templatemo.com/tm-583-festava-live
 body {
   background-color: var(--white-color);
   font-family: var(--body-font-family); 
-  background: linear-gradient(135deg, #000000, #FFD700); /* Black to gold gradient */
+  background-color: black; /* Black background */
 
 } 
 
@@ -730,6 +730,49 @@ strong {
   position: relative;
   z-index: 2;
 }
+
+
+/*Posters*/
+.poster-section {
+  background: linear-gradient(to bottom, #4b4b4b, black);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee-animation 30s linear infinite;
+  min-width: 200%;
+}
+
+.poster-thumb {
+  flex: 0 0 auto;
+  padding: 10px;
+}
+
+.poster-thumb img {
+  max-width: 400px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Smooth Scrolling Effect */
+@keyframes marquee-animation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 
 
 /*---------------------------------------

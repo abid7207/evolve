@@ -732,29 +732,39 @@ strong {
 }
 
 
-/*Posters*/
+/* Posters */
 .poster-section {
   background: linear-gradient(to bottom, #4b4b4b, black);
   padding: 20px;
   overflow: hidden;
 }
 
+/* Enable scrolling */
 .marquee {
   display: flex;
-  overflow: hidden;
+  overflow-x: auto; /* Allows manual scrolling */
+  scroll-snap-type: x mandatory; /* Smooth snap scrolling */
   white-space: nowrap;
   width: 100%;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
 
+.marquee::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome & Safari */
+}
+
+/* Marquee animation */
 .marquee-content {
   display: flex;
   animation: marquee-animation 30s linear infinite;
   min-width: 200%;
 }
 
+/* Ensure smooth alignment */
 .poster-thumb {
   flex: 0 0 auto;
   padding: 10px;
+  scroll-snap-align: start; /* Snaps to each image */
 }
 
 .poster-thumb img {

@@ -737,43 +737,46 @@ strong {
   background: linear-gradient(to bottom, #4b4b4b, black);
   padding: 20px;
   overflow: hidden;
+  position: relative;
 }
 
-/* Enable scrolling */
+.marquee-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .marquee {
   display: flex;
-  overflow-x: auto; /* Allows manual scrolling */
-  scroll-snap-type: x mandatory; /* Smooth snap scrolling */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   white-space: nowrap;
   width: 100%;
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  scrollbar-width: none;
 }
 
 .marquee::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in Chrome & Safari */
+  display: none;
 }
 
-/* Marquee animation */
 .marquee-content {
   display: flex;
-  animation: marquee-animation 30s linear infinite;
   min-width: 200%;
+  animation: marquee-animation 30s linear infinite;
 }
 
-/* Ensure smooth alignment */
 .poster-thumb {
   flex: 0 0 auto;
   padding: 10px;
-  scroll-snap-align: start; /* Snaps to each image */
+  scroll-snap-align: start;
 }
 
 .poster-thumb img {
-  max-width: 400px; /* Adjust size as needed */
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
 }
 
-/* Smooth Scrolling Effect */
 @keyframes marquee-animation {
   from {
     transform: translateX(0);
@@ -781,6 +784,32 @@ strong {
   to {
     transform: translateX(-50%);
   }
+}
+
+.nav-arrows {
+  position: relative;
+  top: 20px;
+  right: 20px;
+  left: auto;
+  transform: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+
+.arrow-btn {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.arrow-btn:hover {
+  background: rgba(255, 255, 255, 1);
 }
 
 
@@ -842,6 +871,57 @@ strong {
 .pricing-thumb .link-fx-1:hover {
   color: var(--link-hover-color);
 }
+
+.pricing-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 10px;
+  border: 1px solid white;
+  color: white;
+  width: 20%; /* Ensures equal column width */
+}
+
+.pricing-table thead {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Table - Ensure Table and Headers are Visible on Small Screens */
+@media (max-width: 768px) {
+  .pricing-table {
+      display: table;
+  }
+
+  .pricing-table thead {
+      display: table-header-group; /* Ensure headers are visible */
+  }
+
+  .pricing-table tbody {
+      display: table-row-group;
+  }
+
+  .pricing-table tr {
+      display: table-row;
+  }
+
+  .pricing-table th, 
+  .pricing-table td {
+      display: table-cell;
+      text-align: center;
+      width: auto; /* Prevents columns from shrinking too much */
+      padding: 8px;
+  }
+
+  .pricing-table td::before {
+      content: none; /* Remove unnecessary mobile labels */
+  }
+}
+
 
 
 /*---------------------------------------

@@ -453,39 +453,66 @@ https://templatemo.com/tm-583-festava-live
             </div>
         </section>
 
-        <!-- Poster Section with Smooth Marquee Effect -->
+        <!-- poster section -->
         <section class="poster-section">
-            <div class="marquee">
-                <div class="marquee-content">
-                    <!-- Original Set of Images -->
-                    <div class="poster-thumb"><img src="images/event_1.png" alt="Event 1" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_2.png" alt="Event 2" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_3.png" alt="Event 3" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_4.png" alt="Event 4" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_5.png" alt="Event 5" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_6.png" alt="Event 6" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_7.png" alt="Event 7" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_8.png" alt="Event 8" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_9.png" alt="Event 9" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_10.png" alt="Event 10" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_11.png" alt="Event 11" class="img-fluid"></div>
-
-                    <!-- Duplicate Set for Seamless Loop -->
-                    <div class="poster-thumb"><img src="images/event_1.png" alt="Event 1" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_2.png" alt="Event 2" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_3.png" alt="Event 3" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_4.png" alt="Event 4" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_5.png" alt="Event 5" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_6.png" alt="Event 6" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_7.png" alt="Event 7" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_8.png" alt="Event 8" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_9.png" alt="Event 9" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_10.png" alt="Event 10" class="img-fluid"></div>
-                    <div class="poster-thumb"><img src="images/event_11.png" alt="Event 11" class="img-fluid"></div>
+            <div class="marquee-wrapper">
+                <div class="marquee" id="marquee">
+                    <div class="marquee-content">
+                        <!-- Original Set of Images -->
+                        <div class="poster-thumb"><img src="images/event_1.png" alt="Event 1" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_2.png" alt="Event 2" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_3.png" alt="Event 3" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_4.png" alt="Event 4" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_5.png" alt="Event 5" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_6.png" alt="Event 6" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_7.png" alt="Event 7" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_8.png" alt="Event 8" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_9.png" alt="Event 9" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_10.png" alt="Event 10" class="img-fluid"></div>
+                        <div class="poster-thumb"><img src="images/event_11.png" alt="Event 11" class="img-fluid"></div>
+                    </div>
                 </div>
+            </div>
+            <!-- Navigation Arrows -->
+            <div class="nav-arrows">
+                <button id="prevBtn" class="arrow-btn">&#10094;</button>
+                <button id="nextBtn" class="arrow-btn">&#10095;</button>
             </div>
         </section>
 
+        <!-- button behaviour -->
+        <script>
+            const marquee = document.getElementById("marquee");
+            const marqueeContent = document.querySelector(".marquee-content");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            const scrollAmount = 400; // Adjust scroll distance
+            
+            let isScrolling = true;
+            
+            function startMarquee() {
+                marqueeContent.style.animation = "marquee-animation 30s linear infinite";
+                isScrolling = true;
+            }
+            
+            function stopMarquee() {
+                marqueeContent.style.animation = "none";
+                isScrolling = false;
+            }
+            
+            prevBtn.addEventListener("click", () => {
+                stopMarquee();
+                marquee.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+                setTimeout(startMarquee, 5000);
+            });
+            
+            nextBtn.addEventListener("click", () => {
+                stopMarquee();
+                marquee.scrollBy({ left: scrollAmount, behavior: "smooth" });
+                setTimeout(startMarquee, 5000);
+            });
+        </script>
+            
 
         
 
@@ -515,76 +542,160 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-12 col-md-6 mb-4">
                         <div class="pricing-thumb text-center">
                             <p style="font-size: 30px; font-weight: bolder; color: white;">
-                                IEEE PES/SPS Members
+                                Register for 1 
                             </p>
-                            <div class="mt-4">
-                                <h2 style="color: white;">₹900</h2>
-                            </div>
+                            <table class="table pricing-table">
+                                <tbody>
+                                    <tr>
+                                        <th>IEEE SPS/PES members</th>
+                                        <td>₹ 900</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE members</th>
+                                        <td>₹ 1000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE members</th>
+                                        <td>₹ 1200</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE YP</th>
+                                        <td>₹ 1300</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE YP</th>
+                                        <td>₹ 1500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
                             <br />
                             <a style="font-size: 14px;" class="btn custom-btn smoothscroll"
                                 href="https://forms.gle/cDjFvh6rbrrnfWTr8">REGISTER</a>
                         </div>
+                        
                     </div>
 
                     <div class="col-12 col-md-6 mb-4">
                         <div class="pricing-thumb text-center">
                             <p style="font-size: 30px; font-weight: bolder; color: white;">
-                                IEEE Students
+                                Register for  3
                             </p>
-                            <div class="mt-4">
+                            <table class="table pricing-table">
+                                <tbody>
+                                    <tr>
+                                        <th>IEEE SPS/PES members</th>
+                                        <td>₹ 850</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE members</th>
+                                        <td>₹ 950</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE members</th>
+                                        <td>₹ 1100</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE YP</th>
+                                        <td>₹ 1300</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE YP</th>
+                                        <td>₹ 1500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <!-- <div class="mt-4">
                                 <h2 style="color: white;">₹1000</h2>
-                            </div>
+                            </div> -->
                             <br />
                             <a style="font-size: 14px;" class="btn custom-btn smoothscroll"
-                                href="https://forms.gle/cDjFvh6rbrrnfWTr8">REGISTER</a>
+                                href="https://forms.gle/1zyPLPsy9Fh68yf37">REGISTER</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Second Row (1 Element) -->
-                <div class="row d-lg-flex justify-content-center">
-                    <div class="col-12 col-lg-6 mb-4">
-                        <div class="pricing-thumb text-center">
-                            <p style="font-size: 30px; font-weight: bolder; color: white;">
-                                Non IEEE Students
-                            </p>
-                            <div class="mt-4">
-                                <h2 style="color: white;">₹1200</h2>
-                            </div>
-                            <br />
-                            <a style="font-size: 14px;" class="btn custom-btn smoothscroll"
-                                href="https://forms.gle/cDjFvh6rbrrnfWTr8">REGISTER</a>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <!-- Third Row (2 Elements) -->
                 <div class="row">
                     <div class="col-12 col-md-6 mb-4">
                         <div class="pricing-thumb text-center">
                             <p style="font-size: 30px; font-weight: bolder; color: white;">
-                                IEEE YP
+                                Register for  5
                             </p>
-                            <div class="mt-4">
+                            <table class="table pricing-table">
+                                <tbody>
+                                    <tr>
+                                        <th>IEEE SPS/PES members</th>
+                                        <td>₹ 800</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE members</th>
+                                        <td>₹ 900</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE members</th>
+                                        <td>₹ 1100</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE YP</th>
+                                        <td>₹ 1300</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE YP</th>
+                                        <td>₹ 1500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <!-- <div class="mt-4">
                                 <h2 style="color: white;">₹1300</h2>
-                            </div>
+                            </div> -->
                             <br />
                             <a style="font-size: 14px;" class="btn custom-btn smoothscroll"
-                                href="https://forms.gle/cDjFvh6rbrrnfWTr8">REGISTER</a>
+                                href="https://forms.gle/EWiojUfTJy4xAjbx5">REGISTER</a>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-6 mb-4">
                         <div class="pricing-thumb text-center">
                             <p style="font-size: 30px; font-weight: bolder; color: white;">
-                                Non IEEE YP
+                                Register for  10
                             </p>
-                            <div class="mt-4">
+                            <table class="table pricing-table">
+                                <tbody>
+                                    <tr>
+                                        <th>IEEE SPS/PES members</th>
+                                        <td>₹ 700</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE members</th>
+                                        <td>₹ 800</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE members</th>
+                                        <td>₹ 1000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>IEEE YP</th>
+                                        <td>₹ 1300</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-IEEE YP</th>
+                                        <td>₹ 1500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <!-- <div class="mt-4">
                                 <h2 style="color: white;">₹1500</h2>
-                            </div>
+                            </div> -->
                             <br />
                             <a style="font-size: 14px;" class="btn custom-btn smoothscroll"
-                                href="https://forms.gle/cDjFvh6rbrrnfWTr8">REGISTER</a>
+                                href="https://forms.gle/RjmTPu6XAnSYHXpB8">REGISTER</a>
                         </div>
                     </div>
                 </div>
